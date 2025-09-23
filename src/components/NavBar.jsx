@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@heroui/react';
 import CartWidget from './CartWidget';
 
@@ -7,6 +8,20 @@ const NavBar = () => {
         <NavbarBrand>
             <h1 className="font-extrabold text-inherit text-2xl textoLogo">BAR JSX</h1>
         </NavbarBrand>
+    );
+
+    const menu = () => (
+        <NavbarContent justify="center" className="menu-principal">
+            <NavbarItem>
+                Cocktails
+            </NavbarItem>
+            <NavbarItem>
+                Mocktails
+            </NavbarItem>
+            <NavbarItem>
+                Limonadas
+            </NavbarItem>
+        </NavbarContent>
     );
 
     const cartButton = () => (
@@ -20,6 +35,7 @@ const NavBar = () => {
     return (
         <Navbar position="sticky" className="shadow-sm p-4 bg-black text-white">
             {logo()}
+            {menu()}
             {cartButton()}
         </Navbar>
     );

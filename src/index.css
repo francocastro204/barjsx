@@ -6,3 +6,12 @@
 .textoLogo {
     letter-spacing: 0.1em;
 }
+
+.menu-principal li {
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+.menu-principal li:hover {
+    border-bottom: 2px solid #fff;
+}

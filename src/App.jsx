@@ -6,7 +6,7 @@ function App() {
         <div className="min-h-screen flex flex-col">
             <NavBar />
             <main className="flex-1 p-8">
-                <ItemListContainer />
+                <ItemListContainer greeting="Bienvenidos a Bar JSX" />
             </main>
         </div>
     );

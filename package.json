@@ -3,7 +3,6 @@
   "description": "Bar JSX - Proyecto para el curso de React de CoderHouse.",
   "author": "Franco Castro Miranda",
   "author_email": "francocastro204@gmail.com",
-  "author_url": "https://github.com/franco-castro-miranda",
   "private": true,
   "version": "1.0.1",
   "type": "module",

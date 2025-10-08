@@ -1,26 +1,34 @@
-import { Link } from 'react-router-dom';
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@heroui/react';
+import { Link } from 'react-router';
 import CartWidget from './CartWidget';
 
 const NavBar = () => {
 
     const logo = () => (
         <NavbarBrand>
-            <h1 className="font-extrabold text-inherit text-2xl textoLogo">BAR JSX</h1>
+            <Link to="/">
+                <h1 className="font-extrabold text-inherit text-2xl textoLogo">BAR JSX</h1>
+            </Link>
         </NavbarBrand>
     );
 
     const menu = () => (
         <NavbarContent justify="center" className="menu-principal">
-            <NavbarItem>
-                Cocktails
-            </NavbarItem>
-            <NavbarItem>
-                Mocktails
-            </NavbarItem>
-            <NavbarItem>
-                Limonadas
-            </NavbarItem>
+            <Link to="/category/cocktails">
+                <NavbarItem>
+                    Cocktails
+                </NavbarItem>
+            </Link>
+            <Link to="/category/mocktails">
+                <NavbarItem>
+                    Mocktails
+                </NavbarItem>
+            </Link>
+            <Link to="/category/limonadas">
+                <NavbarItem>
+                    Limonadas
+                </NavbarItem>
+            </Link>
         </NavbarContent>
     );
 

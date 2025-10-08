@@ -1,13 +1,33 @@
+import { BrowserRouter, Routes, Route } from 'react-router';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import Home from './pages/Home';
+import Detail from './pages/Detail';
+import ErrorPage from './pages/404';
 
 function App() {
     return (
         <div className="min-h-screen flex flex-col">
-            <NavBar />
-            <main className="flex-1 p-8">
-                <ItemListContainer greeting="Bienvenidos a Bar JSX" />
-            </main>
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={<Home />}
+                    />
+                    <Route
+                        path="/detail/:idParam"
+                        element={<Detail />}
+                    />
+                    <Route
+                        path="/category/:catParam"
+                        element={<Home />}
+                    />
+                    <Route
+                        path="*"
+                        element={<ErrorPage />}
+                    />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

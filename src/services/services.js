@@ -5,7 +5,7 @@ function getProducts(){
         setTimeout( () => {
             console.log('Promise completada');
             resolve(data);
-        }, 1000 );
+        }, 1500 );
     });
 };
 
@@ -14,7 +14,7 @@ function getProductById(idParam) {
         const itemRequest = data.find(product => String(product.id) === idParam);
         setTimeout(() => {
             resolve(itemRequest);
-        }, 1000 );
+        }, 1500 );
     });
 };
 
@@ -26,7 +26,7 @@ function getProductsByCategory(catParam){
         }
         setTimeout(() => {
             resolve(itemsRequested);
-        }, 2000);
+        }, 1500);
     });
 }
 

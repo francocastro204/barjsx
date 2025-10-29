@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import { getProductById } from '../services/services';
+import { getProductById } from '../services/FirestoreService';
 import ItemDetailContainer from '../components/ItemDetailContainer';
 import SkeletonItemProduct from '../components/SkeletonItemProduct';
 
@@ -9,12 +9,14 @@ const Detail = () => {
     const [loading, setLoading] = useState(true);
     const { idParam } = useParams();
 
+    const getProductDetail = async () => {
+        const product = await getProductById(idParam);
+        setProduct(product);
+        setLoading(false);
+    };
+
     useEffect( () => {
-        setLoading(true);
-        getProductById(idParam).then(res => {
-            setProduct(res);
-            setLoading(false);
-        });
+        getProductDetail();
     }, [idParam]);
 
     const renderLoading = () => <SkeletonItemProduct />;

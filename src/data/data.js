@@ -1,6 +1,5 @@
 const data = [
     {
-        'id': 1,
         'title': 'Orange Ramazzoti',
         'price': 80,
         'image': 'https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg',
@@ -10,7 +9,6 @@ const data = [
         'sku': '01001'
     },
     {
-        'id': 2,
         'title': 'Margarita Blue',
         'price': 60,
         'image': 'https://images.pexels.com/photos/2480828/pexels-photo-2480828.jpeg',
@@ -20,7 +18,6 @@ const data = [
         'sku': '01002'
     },
     {
-        'id': 3,
         'title': 'Jack Daniels Orange',
         'price': 120,
         'image': 'https://images.pexels.com/photos/1304540/pexels-photo-1304540.jpeg',
@@ -30,7 +27,6 @@ const data = [
         'sku': '01003'
     },
     {
-        'id': 4,
         'title': 'Mojito Clásico',
         'price': 65,
         'image': 'https://images.pexels.com/photos/1187766/pexels-photo-1187766.jpeg',
@@ -40,7 +36,6 @@ const data = [
         'sku': '01004'
     },
     {
-        'id': 5,
         'title': 'Piña Colada',
         'price': 75,
         'image': 'https://images.pexels.com/photos/19533205/pexels-photo-19533205.jpeg',
@@ -50,7 +45,6 @@ const data = [
         'sku': '01005'
     },
     {
-        'id': 6,
         'title': 'Cosmopolitan',
         'price': 85,
         'image': 'https://images.pexels.com/photos/2795026/pexels-photo-2795026.jpeg',
@@ -60,7 +54,6 @@ const data = [
         'sku': '01006'
     },
     {
-        'id': 7,
         'title': 'Virgin Mojito',
         'price': 45,
         'image': 'https://images.pexels.com/photos/2336667/pexels-photo-2336667.jpeg',
@@ -70,7 +63,6 @@ const data = [
         'sku': '01007'
     },
     {
-        'id': 8,
         'title': 'Piña Colada Virgin',
         'price': 50,
         'image': 'https://images.pexels.com/photos/33129966/pexels-photo-33129966.jpeg',
@@ -80,7 +72,6 @@ const data = [
         'sku': '01008'
     },
     {
-        'id': 9,
         'title': 'Limonada Clásica',
         'price': 35,
         'image': 'https://images.pexels.com/photos/227906/pexels-photo-227906.jpeg',
@@ -90,7 +81,6 @@ const data = [
         'sku': '01009'
     },
     {
-        'id': 10,
         'title': 'Limonada de Coco',
         'price': 40,
         'image': 'https://images.pexels.com/photos/2093089/pexels-photo-2093089.jpeg',

@@ -1,7 +1,17 @@
 import { Card, CardBody, Image, Button } from '@heroui/react';
+import { useContext, useState } from 'react';
+import cartContext from '../context/cartContext';
 import ItemCount from './ItemCount';
 
 const ItemDetailContainer = ({ product }) => {
+    const [quantity, setQuantity] = useState(1);
+    const { addItem } = useContext(cartContext);
+
+    const addItemToCart = () => {
+        addItem({ ...product, quantity: quantity });
+        console.log('product', product);
+    };
+
     return (
         <Card shadow="sm" className='bg-white'>
             <CardBody className="overflow-visible p-0 flex flex-row">
@@ -25,8 +35,8 @@ const ItemDetailContainer = ({ product }) => {
                         <div className="mb-6 border-b-1 border-gray-200 pb-6"></div>
                         <p className=" text-gray-900 text-2xl text-italic">{product.description}</p>
                         <div className="mt-24">
-                            <ItemCount />
-                            <Button color="primary" size="lg" radius="full">Agregar al carrito</Button>
+                            <ItemCount quantity={quantity} setQuantity={setQuantity} stock={product.stock} />
+                            <Button color="primary" size="lg" radius="full" onPress={addItemToCart}>Agregar al carrito</Button>
                         </div>
                     </div>
                 </div>

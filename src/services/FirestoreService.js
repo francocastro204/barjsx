@@ -1,6 +1,5 @@
 import { collection, getDocs, doc, getDoc, query, where, addDoc } from 'firebase/firestore';
 import db from '../firebase/config';
-import data from '../data/data';
 
 const getProducts = async () => {
     const productRef = collection(db, 'products');
@@ -44,12 +43,4 @@ const getOrderById = async (orderId) => {
     return null;
 };
 
-const exportProducts = async () => {
-    const productRef = collection(db, 'products');
-    for (let item of data) {
-        const newDoc = await addDoc(productRef, item);
-        console.log('FirestoreService => exportProducts => newDoc', newDoc.id);
-    }
-};
-
-export { getProducts, getProductById, getProductsByCategory, createBuyOrder, getOrderById, exportProducts };
+export { getProducts, getProductById, getProductsByCategory, createBuyOrder, getOrderById };

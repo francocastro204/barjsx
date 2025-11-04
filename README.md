@@ -2,11 +2,11 @@
 
 Proyecto final del curso de React.js de CoderHouse. Una Single Page Application (SPA) de e-commerce desarrollada con React, que permite a los usuarios explorar y comprar bebidas (cocktails, mocktails y limonadas).
 
-## 📋 Descripción
+## Descripción
 
 Bar JSX es una aplicación web de comercio electrónico que ofrece una experiencia de compra fluida para productos de bebidas. La aplicación utiliza React Router para la navegación, Firebase Firestore como base de datos, y Context API para el manejo del estado global del carrito de compras.
 
-## 🚀 Características
+## Características
 
 - **Catálogo de productos**: Visualización de productos con filtrado por categorías
 - **Detalle de productos**: Vista detallada con información completa de cada producto
@@ -16,7 +16,7 @@ Bar JSX es una aplicación web de comercio electrónico que ofrece una experienc
 - **Navegación SPA**: Navegación sin recargas de página
 - **Base de datos en la nube**: Integración con Firebase Firestore
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **React** 19.1.1
 - **React Router** 7.9.3
@@ -25,7 +25,7 @@ Bar JSX es una aplicación web de comercio electrónico que ofrece una experienc
 - **Tailwind CSS** (via @tailwindcss/vite)
 - **HeroUI** 2.8.4 (Componentes UI)
 
-## 📦 Instalación
+## Instalación
 
 1. Clona el repositorio:
 ```bash
@@ -55,7 +55,7 @@ VITE_FIREBASE_APP_ID=tu_app_id
 npm run dev
 ```
 
-## 🏗️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 barjsx/
@@ -89,7 +89,7 @@ barjsx/
 └── README.md
 ```
 
-## 🎯 Funcionalidades Principales
+## Funcionalidades Principales
 
 ### Listado y Detalle de Productos
 - **ItemListContainer**: Contenedor que obtiene productos de Firestore
@@ -115,20 +115,20 @@ barjsx/
 - Resumen de productos comprados
 - Total de la compra
 
-## 🔥 Firebase
+## Firebase
 
 El proyecto utiliza Firebase Firestore para:
 - **Colección `products`**: Almacena todos los productos del catálogo
 - **Colección `orders`**: Registra las órdenes de compra realizadas
 
-## 📝 Scripts Disponibles
+## Scripts Disponibles
 
 - `npm run dev`: Inicia el servidor de desarrollo
 - `npm run build`: Construye la aplicación para producción
 - `npm run preview`: Previsualiza el build de producción
 - `npm run lint`: Ejecuta el linter
 
-## 🚢 Deploy
+## Deploy
 
 Para hacer deploy en Vercel:
 

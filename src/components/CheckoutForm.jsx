@@ -116,9 +116,9 @@ const CheckoutForm = () => {
                 </Card>
                 <div className="flex justify-end mt-8">
                     <Button 
-                        onPress={handleCheckout} 
-                        color="success" 
-                        size="lg" 
+                        onPress={handleCheckout}
+                        color="success"
+                        size="lg"
                         radius="full"
                         isLoading={isSubmitting}
                         isDisabled={isSubmitting || cart.length === 0}

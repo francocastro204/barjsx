@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Skeleton, Button } from '@heroui/react';
-import { getProducts, getProductsByCategory, exportProducts } from '../services/FirestoreService';
+import { getProducts, getProductsByCategory } from '../services/FirestoreService';
 import SkeletonItemProduct from './SkeletonItemDetail';
 import EmptyState from './EmptyState';
 import ItemList from './ItemList';
@@ -10,18 +10,7 @@ const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const showBtnCargarTodosLosProductos = false;
     const { catParam } = useParams();
-
-    const cargarTodosLosProductos = async () => {
-        try {
-            setError(null);
-            await exportProducts();
-        } catch (err) {
-            console.error('Error loading all products:', err);
-            setError(err.message || 'Error al cargar todos los productos');
-        }
-    };
 
     const getProductsList = async () => {
         try {
@@ -96,24 +85,8 @@ const ItemListContainer = () => {
         );
     };
 
-    const renderCargarTodosLosProductosDB = () => showBtnCargarTodosLosProductos && (
-        <div className="flex justify-center mt-16 mb-16 pb-12">
-            <Button 
-                onPress={cargarTodosLosProductos} 
-                className="mt-9" 
-                color="primary" 
-                size="lg" 
-                radius="full"
-                isDisabled={loading}
-            >
-                Cargar todos los productos
-            </Button>
-        </div>
-    );
-
     return (
         <div>
-            {renderCargarTodosLosProductosDB()}
             {loading ? renderLoading() : error ? renderError() : products.length === 0 ? renderSinProductos() : renderProductos()}
         </div>
     );

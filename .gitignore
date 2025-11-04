@@ -1,4 +1,9 @@
 node_modules
 package-lock.json
 .DS_Store
+dist
+dist-ssr
+*.local
+
+# ENV locales
 .env

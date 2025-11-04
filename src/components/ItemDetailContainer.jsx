@@ -1,47 +1,62 @@
-import { Card, CardBody, Image, Button } from '@heroui/react';
-import { useContext, useState } from 'react';
-import cartContext from '../context/cartContext';
-import ItemCount from './ItemCount';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
+import { Button } from '@heroui/react';
+import { getProductById } from '../services/FirestoreService';
+import SkeletonItemDetail from './SkeletonItemDetail';
+import ItemDetail from './ItemDetail';
+import EmptyState from './EmptyState';
 
-const ItemDetailContainer = ({ product }) => {
-    const [quantity, setQuantity] = useState(1);
-    const { addItem } = useContext(cartContext);
+const ItemDetailContainer = () => {
+    const [product, setProduct] = useState({});
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const { idParam } = useParams();
 
-    const addItemToCart = () => {
-        addItem({ ...product, quantity: quantity });
-        console.log('product', product);
+    const getProductDetail = async () => {
+        try {
+            setError(null);
+            
+            const product = await getProductById(idParam);
+            setProduct(product);
+        } catch (err) {
+            console.error('Error fetching product:', err);
+            setError(err.message || 'Error al cargar el producto');
+        } finally {
+            setLoading(false);
+        }
     };
 
+    useEffect(() => {
+        getProductDetail();
+    }, [idParam]);
+
+    const renderLoading = () => <SkeletonItemDetail />;
+
+    const renderError = () => (
+        <div className="text-center mt-9">
+            <h2 className="text-xl font-bold text-red-600">
+                Error: {error}
+            </h2>
+            <Button 
+                onClick={() => getProductDetail()}
+                className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                color="primary" 
+                size="lg" 
+                radius="full" 
+            >
+                Reintentar
+            </Button>
+        </div>
+    );
+
+    const renderEmpty = () => <EmptyState message="Producto no encontrado" />;
+
+    const renderProduct = () => <ItemDetail product={product} />;
+
     return (
-        <Card shadow="sm" className='bg-white'>
-            <CardBody className="overflow-visible p-0 flex flex-row">
-                <div className='w-1/3'>
-                    <Image
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full object-contain"
-                    />
-                </div>
-                <div className="w-2/3 p-4">
-                    <div className="ml-16">
-                        <h1 className="font-bold text-4xl pt-6 mb-6">{product.title}</h1>
-                        <h2 className="font-bold text-2xl ">${product.price}</h2>
-                        <div className="mb-6 border-b-1 border-gray-200 pb-6"></div>
-                        <div className="mb-2">
-                            <small className=" text-gray-500">SKU: {product.sku}</small>
-                            <br />
-                            <small className=" text-gray-500">Tipo: {product.category}</small>
-                        </div>
-                        <div className="mb-6 border-b-1 border-gray-200 pb-6"></div>
-                        <p className=" text-gray-900 text-2xl text-italic">{product.description}</p>
-                        <div className="mt-24">
-                            <ItemCount quantity={quantity} setQuantity={setQuantity} stock={product.stock} />
-                            <Button color="primary" size="lg" radius="full" onPress={addItemToCart}>Agregar al carrito</Button>
-                        </div>
-                    </div>
-                </div>
-            </CardBody>
-        </Card>
+        <div className="container mx-auto px-4">
+            {loading ? renderLoading() : error ? renderError() : !product || !product.id ? renderEmpty() : renderProduct()}
+        </div>
     );
 };
 

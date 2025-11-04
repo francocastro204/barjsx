@@ -4,15 +4,13 @@ import { Link } from 'react-router';
 import cartContext from '../context/cartContext';
 
 const CartWidget = () => {
-
-    const { cart } = useContext(cartContext);
-    console.log('cart', cart);
-    const cartItemCount = cart.length;
+    const { countItemsInCart } = useContext(cartContext);
+    const cartItemCount = countItemsInCart();
 
     return (
         <Badge content={cartItemCount} color="primary" size="md">
             <Button
-                color="secondary"
+                color="default"
                 variant="flat"
                 startContent="🛒"
                 className="text-white"

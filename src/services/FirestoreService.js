@@ -37,6 +37,15 @@ const createBuyOrder = async (orderData) => {
     return newDoc.id;
 };
 
+const getOrderById = async (orderId) => {
+    const orderRef = doc(db, 'orders', orderId);
+    const orderSnapshot = await getDoc(orderRef);
+    if (orderSnapshot.exists()) {
+        return {...orderSnapshot.data(), id: orderSnapshot.id};
+    }
+    return null;
+};
+
 const exportProducts = async () => {
     const productRef = collection(db, 'products');
     for (let item of data) {
@@ -45,4 +54,4 @@ const exportProducts = async () => {
     }
 };
 
-export { getProducts, getProductById, getProductsByCategory, createBuyOrder, exportProducts };
+export { getProducts, getProductById, getProductsByCategory, createBuyOrder, getOrderById, exportProducts };

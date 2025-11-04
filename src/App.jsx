@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
 import NavBar from './components/NavBar';
-import Home from './pages/Home';
-import Detail from './pages/Detail';
 import ErrorPage from './pages/404';
-import Cart from './pages/CartContainer';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import CartContainer from './components/CartContainer';
+import CheckoutForm from './components/CheckoutForm';
+import OrderConfirmation from './pages/OrderConfirmation';
 import { CartContextProvider } from './context/cartContext';
 
 function App() {
@@ -17,19 +19,27 @@ function App() {
                             <Routes>
                                 <Route
                                     path="/"
-                                    element={<Home />}
+                                    element={<ItemListContainer />}
                                 />
                                 <Route
                                     path="/detail/:idParam"
-                                    element={<Detail />}
+                                    element={<ItemDetailContainer />}
                                 />
                                 <Route
                                     path="/category/:catParam"
-                                    element={<Home />}
+                                    element={<ItemListContainer />}
                                 />
                                 <Route
                                     path="/cart"
-                                    element={<Cart />}
+                                    element={<CartContainer />}
+                                />
+                                <Route
+                                    path="/checkout"
+                                    element={<CheckoutForm />}
+                                />
+                                <Route
+                                    path="/order-confirmation/:orderId"
+                                    element={<OrderConfirmation />}
                                 />
                                 <Route
                                     path="*"

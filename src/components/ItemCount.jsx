@@ -37,22 +37,22 @@ const ItemCount = ({ quantity, setQuantity, stock }) => {
     return (
         <div id="counter-button" className="flex flex-col gap-2 pt-4 pb-4">
             <div className="flex items-center gap-2">
-                <Button 
-                    onPress={restar} 
-                    color="default" 
-                    size="sm" 
-                    radius="full" 
+                <Button
+                    onPress={restar}
+                    color="default"
+                    size="sm"
+                    radius="full"
                     variant="bordered"
                     isDisabled={quantity <= minValue}
                 >
                     -
                 </Button>
                 <h3 className="text-2xl font-bold text-center pl-4 pr-4">{quantity}</h3>
-                <Button 
-                    onPress={sumar} 
-                    color="default" 
-                    size="sm" 
-                    radius="full" 
+                <Button
+                    onPress={sumar}
+                    color="default"
+                    size="sm"
+                    radius="full"
                     variant="bordered"
                     isDisabled={quantity >= maxValue}
                 >

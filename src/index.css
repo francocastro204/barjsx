@@ -12,6 +12,7 @@
     cursor: pointer;
 }
 
-.menu-principal li:hover {
+.menu-principal li:hover,
+.menu-principal li.active {
     border-bottom: 2px solid #fff;
 }

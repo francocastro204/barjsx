@@ -1,9 +1,7 @@
-
 import { collection, getDocs, doc, getDoc, query, where, addDoc } from 'firebase/firestore';
 import db from '../firebase/config';
 import data from '../data/data';
 
-// LLamar a los servicios
 const getProducts = async () => {
     const productRef = collection(db, 'products');
     const productsSnapshot = await getDocs(productRef);

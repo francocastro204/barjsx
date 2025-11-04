@@ -21,10 +21,10 @@ const ItemDetail = ({ product }) => {
 
     const renderVolverAgregarAlCarrito = () => (
         <div>
-            <Button 
-                color="primary" 
-                size="lg" 
-                radius="full" 
+            <Button
+                color="primary"
+                size="lg"
+                radius="full"
                 onPress={() => {
                     setItemAdded(false);
                     setQuantity(1);
@@ -34,7 +34,7 @@ const ItemDetail = ({ product }) => {
                 Agregar más unidades
             </Button>
         </div>
-    )
+    );
 
     const renderButtonAgregarAlCarrito = () => (
         <div >

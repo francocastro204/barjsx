@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
     const getProductDetail = async () => {
         try {
             setError(null);
-            
+
             const product = await getProductById(idParam);
             setProduct(product);
         } catch (err) {
@@ -37,12 +37,12 @@ const ItemDetailContainer = () => {
             <h2 className="text-xl font-bold text-red-600">
                 Error: {error}
             </h2>
-            <Button 
-                onClick={() => getProductDetail()}
+            <Button
+                onPress={() => getProductDetail()}
                 className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                color="primary" 
-                size="lg" 
-                radius="full" 
+                color="primary"
+                size="lg"
+                radius="full"
             >
                 Reintentar
             </Button>

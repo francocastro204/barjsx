@@ -110,7 +110,7 @@ const CheckoutForm = () => {
                         </div>
                         <div className="w-1/3"></div>
                         <div className="w-1/3 text-center">
-                            <p className="text-xl font-bold">${totalAmount.toFixed(2)}</p>
+                            <p className="text-xl font-bold">${totalAmount.toFixed(0)}</p>
                         </div>
                     </CardFooter>
                 </Card>

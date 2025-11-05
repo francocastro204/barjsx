@@ -26,7 +26,7 @@ const CartItem = ({ item, customColumn, showPrice = true, onRemove }) => {
                 <p className="text-sm">{quantity}</p>
             </div>
             <div className={`${classCustomColumn} text-center`}>
-                <p className="text-sm font-semibold">${(price * quantity).toFixed(2)}</p>
+                <p className="text-sm font-semibold">${(price * quantity).toFixed(0)}</p>
             </div>
             {onRemove && (
                 <div className={`${classCustomColumn} text-center`}>

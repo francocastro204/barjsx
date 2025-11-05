@@ -54,7 +54,7 @@ const CartContainer = () => {
                     <div className="w-1/4"><p className="text-lg font-bold">Total:</p></div>
                     <div className="w-1/4"></div>
                     <div className="w-1/4 text-center"></div>
-                    <div className="w-1/4 text-center"><p className="text-xl font-bold">${totalCart.toFixed(2)}</p></div>
+                    <div className="w-1/4 text-center"><p className="text-xl font-bold">${totalCart.toFixed(0)}</p></div>
                     <div className="w-1/4 text-center">
                         <Button color="danger" variant="light" size="sm" onPress={clearCart}>Vaciar carrito</Button>
                     </div>

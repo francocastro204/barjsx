@@ -66,15 +66,13 @@ const OrderConfirmation = () => {
         <main className="flex-1 p-8">
             <div className="container mx-auto px-4">
                 <h1 className="text-3xl font-bold text-center mt-8 mb-12">¡Compra exitosa!</h1>
-                
+
                 <Card shadow="sm" className="bg-white max-w-4xl mx-auto">
                     <CardHeader className="flex flex-col gap-3 p-6">
                         <h2 className="text-xl font-bold">Detalles de tu pedido</h2>
                         <p className="text-sm text-gray-600">ID de pedido: <span className="font-semibold">{orderId}</span></p>
                     </CardHeader>
-                    
                     <Divider />
-                    
                     <CardBody className="p-6">
                         <div className="mb-6">
                             <h3 className="text-lg font-semibold mb-4">Información del comprador</h3>
@@ -114,10 +112,9 @@ const OrderConfirmation = () => {
                     </CardBody>
 
                     <Divider />
-                    
                     <CardFooter className="flex justify-between items-center p-6">
                         <p className="text-lg font-bold">Total:</p>
-                        <p className="text-2xl font-bold">${total.toFixed(2)}</p>
+                        <p className="text-2xl font-bold">${total.toFixed(0)}</p>
                     </CardFooter>
                 </Card>
 

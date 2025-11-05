@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router';
-import { Card, CardHeader, CardBody, CardFooter, Divider, Button } from '@heroui/react';
+import { Card, CardHeader, CardBody, CardFooter, Divider, Button, Spinner } from '@heroui/react';
 import { getOrderById } from '../services/FirestoreService';
 import CartItem from '../components/CartItem';
 
@@ -28,26 +28,22 @@ const OrderConfirmation = () => {
 
     if (loading) {
         return (
-            <main className="flex-1 p-8">
-                <div className="container mx-auto px-4">
-                    <h1 className="text-2xl font-bold text-center mt-8 mb-12">Cargando...</h1>
-                </div>
-            </main>
+            <div className="flex justify-center mt-8 mb-8">
+                <Spinner />
+            </div>
         );
     }
 
     if (!order) {
         return (
             <main className="flex-1 p-8">
-                <div className="container mx-auto px-4">
-                    <h1 className="text-2xl font-bold text-center mt-8 mb-12">Orden no encontrada</h1>
-                    <div className="flex justify-center">
-                        <Link to="/">
-                            <Button color="primary" size="lg" radius="full">
-                                Volver al inicio
-                            </Button>
-                        </Link>
-                    </div>
+                <h1 className="text-2xl font-bold text-center mt-8 mb-12">Orden no encontrada</h1>
+                <div className="flex justify-center">
+                    <Link to="/">
+                        <Button color="primary" size="lg" radius="full">
+                            Volver al inicio
+                        </Button>
+                    </Link>
                 </div>
             </main>
         );
@@ -64,7 +60,7 @@ const OrderConfirmation = () => {
 
     return (
         <main className="flex-1 p-8">
-            <div className="container mx-auto px-4">
+            <div className="mx-auto px-4">
                 <h1 className="text-3xl font-bold text-center mt-8 mb-12">¡Compra exitosa!</h1>
 
                 <Card shadow="sm" className="bg-white max-w-4xl mx-auto">

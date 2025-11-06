@@ -33,23 +33,20 @@ const CartContainer = () => {
 
     const renderCart = () => (
         <>
+            <h1 className="text-3xl font-bold text-center mt-6 mb-12">Carrito de compras</h1>
             <Card shadow="sm" className='bg-white'>
-                <CardHeader className="flex flex-col gap-3 p-4">
-                    <h2 className="text-xl font-bold">Carrito de compras</h2>
-                </CardHeader>
-                <Divider />
-                <div className="flex flex-row gap-4 p-4 bg-gray-100 font-semibold text-sm">
+                <CardHeader className="flex flex-row gap-4 p-4 font-semibold text-sm">
                     <div className="w-1/4">Producto</div>
                     <div className="w-1/4 text-center">Precio unitario</div>
                     <div className="w-1/4 text-center">Cantidad</div>
                     <div className="w-1/4 text-center">Total</div>
                     <div className="w-1/4 text-center"></div>
-                </div>
+                </CardHeader>
+                <Divider />
                 <CardBody className="overflow-visible p-0">
                     {cart.map(item => renderCartItems(item))}
                 </CardBody>
                 <Divider />
-
                 <CardFooter className="flex flex-row gap-4 p-4 font-semibold text-sm">
                     <div className="w-1/4"><p className="text-lg font-bold">Total:</p></div>
                     <div className="w-1/4"></div>
